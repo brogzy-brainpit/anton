@@ -4,6 +4,8 @@ import useMouse from '@/hooks/useMouse'
 import BrandName from './BrandName'
 import MarqueeX from './MarqueeX'
 import SlideUpText from '@/effects/SlideUpText'
+import GridColumn from '@/layout/GridColumn'
+import Section from '@/layout/Section'
 
 function Land({preloaderOut}) {
   const landingRef=useRef(null)
@@ -50,12 +52,52 @@ function Land({preloaderOut}) {
 
         
  <div
- 
+
   className="flex lg:hidden absolute top-0 left-0 items-end w-full h-full"
 > <h2 className=" font-custom text-[#FCCE2F] text-[15em] leading-[.9] font-bod">
    {/* ANTOS CAR CARE */}
    <SlideUpText text={"ANTOS CAR CARE"} preLoaderOut={preloaderOut}/>
      </h2>
+  </div>
+
+  <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+      <Section className="w-full h-full">
+    <GridColumn gridLines className="w-full h-full">
+<div className="col-span-8 items-end self-end justify-end  flex col-start-1 bg-white p-4  rounded-2xl">
+<div className="flex-1 flex ">
+  <h2 className=" font-body text-para  text-brand-black leading-[.9]">
+  <SlideUpText
+   text={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum autem ratione maxime aliquid velit laudantium quos dolores minus, quod atque."}
+   preLoaderOut={preloaderOut}/>
+
+  </h2>
+</div>
+{/* video contaniner */}
+<motion.div
+  className="flex-1 overflow-hidden"
+  initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
+  animate={{
+    clipPath: preloaderOut
+      ? "inset(0% 0% 0% 0%)"
+      : "inset(100% 0% 0% 0%)",
+  }}
+  transition={{
+    duration: 1.2,
+    ease: [0.76, 0, 0.24, 1],
+  }}
+>
+  <video
+    src="/videos/hero.mp4"
+    autoPlay
+    muted
+    loop
+    className="aspect-[7/4] w-full h-full object-cover rounded-2xl"
+  />
+</motion.div>
+</div>
+    </GridColumn>
+      </Section>
+
   </div>
         </div>
   )

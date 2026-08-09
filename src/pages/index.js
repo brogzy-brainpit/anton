@@ -24,8 +24,8 @@ export default function Home() {
     >
       {/* <LocalTime/> */}
     <Land preloaderOut={preLoaderOut}/>
-    <Link href="/contact" className="absolute top-0 left-0 w-full h-full z-50 text-white">contact page</Link>
     <Landing preloaderOut={preLoaderOut}/>
+    <Link href="/contact" className="h-screen flex items-center justify-center text-black bg-white text-heading1">contact page</Link>
     </main>
   );
 }
