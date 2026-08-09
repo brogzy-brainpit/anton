@@ -13,7 +13,7 @@ function Land({preloaderOut}) {
     <div className='relative h-svh w-full overflow-hidden bg-[#262626]'>
         <img src="/assets/car-background.png" alt="Land" className="absolute top-0 left-0 w-full h-full object-cover"/>
   <MarqueeX numbers={6} speed={180}  className='absolute hidden lg:flex  top-0 left-0  w-full h-full  border-none bg-gree-600' >
-  <h2 className=" w-full h-full fl gap-4  font-custom text-[#FCCE2F] ml-12 font-bod">
+  <h2 className=" w-full h-full fl gap-4  font-custom text-[#FCCE2F] mr-[12em] font-bod">
     <BrandName/> 
      </h2>
   </MarqueeX>
