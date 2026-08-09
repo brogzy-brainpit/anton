@@ -1,7 +1,7 @@
 "use client";
 
+import useWindow from "@/hooks/useWindow";
 import { motion } from "framer-motion";
-import { useMediaQuery } from "react-responsive";
 
 const pathVariants = {
   hidden: {
@@ -52,10 +52,11 @@ export default function BrandName() {
       d: "M388.514 1.44009C389.474 0.480095 390.594 9.67979e-05 391.874 9.67979e-05H412.994C414.354 9.67979e-05 415.474 0.480095 416.354 1.44009C417.314 2.3201 417.794 3.4401 417.794 4.80009C417.794 13.6801 417.794 18.1201 417.794 18.1201C417.794 35.8001 417.794 44.6401 417.794 44.6401H400.514C400.514 64.1601 400.514 73.9201 400.514 73.9201C403.074 73.9201 404.354 73.9201 404.354 73.9201V47.5201H417.794V76.8001C417.794 78.0801 417.314 79.2001 416.354 80.1601C415.474 81.1201 414.354 81.6001 412.994 81.6001H391.874C390.594 81.6001 389.474 81.1201 388.514 80.1601C387.554 79.2001 387.074 78.0801 387.074 76.8001C387.074 28.8001 387.074 4.80009 387.074 4.80009C387.074 3.4401 387.554 2.3201 388.514 1.44009ZM400.514 36.9601H404.354V7.68009C401.794 7.68009 400.514 7.68009 400.514 7.68009V36.9601Z",
     },
   ];
-const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1000px)' })
+const {dimension}=useWindow()
   return (
     <motion.svg
-      width={isTabletOrMobile?"350":"2500"}
+      width={"3500"}
+    //   width={dimension.width*.8}
     //   height="82"
       viewBox="0 0 418 82"
       fill="none"
@@ -70,6 +71,7 @@ const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1000px)' })
           fill="#fcce2f"
           custom={index}
           variants={pathVariants}
+          className={"lg:w-[20em] lg:w-[20em]"}
           style={{
             transformOrigin: "center",
           }}
