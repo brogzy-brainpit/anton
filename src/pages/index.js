@@ -13,7 +13,7 @@ export default function Home() {
     setPreLoaderOut(true)
     document.body.style.cursor="default"
     window.scrollTo({top:0})
-    }, 2600);
+    }, 1400);
     return ()=>clearTimeout(timer)
   },[])
   return (

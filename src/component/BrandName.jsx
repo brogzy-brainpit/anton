@@ -55,7 +55,7 @@ export default function BrandName() {
 const {dimension}=useWindow()
   return (
     <motion.svg
-      width={"3500"}
+      width={"1200"}
     //   width={dimension.width*.8}
     //   height="82"
       viewBox="0 0 418 82"
