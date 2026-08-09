@@ -21,8 +21,8 @@ function Land({preloaderOut}) {
         //  style={{x:xMovement,y:yMovement}}
         // animate={{x:preloaderOut?0:100,y:preloaderOut?0:-10,scale:preloaderOut?1:1}}
         transition={{type:"tween",duration:1.5,ease:[0.22, 1, 0.36, 1]}}
-          initial={{x:0,y:0,scale:.95}}
-          exit={{x:0,y:0,scale:.95}}
+          initial={{x:300,y:-20,scale:.95}}
+          exit={{x:300,y:-20,scale:.95}}
           animate={{x:preloaderOut?0:300,y:preloaderOut?0:-20,scale:preloaderOut?1:.95}}
            src="/assets/car-alone.png" alt="Land" className="absolute top-0 left-0 w-full h-full object-cover"/>
 
