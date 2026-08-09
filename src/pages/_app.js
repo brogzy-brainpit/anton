@@ -13,6 +13,7 @@ import Script from "next/script";
 // import SlideUpText from '@/effects/SlideUpText';
 // import Header from '@/components/Header';
 import Head from 'next/head';
+import PageTransition from '@/component/PageTransition';
 
 const body = DM_Sans({
   subsets: ["latin"],
@@ -174,7 +175,8 @@ const [pageName,setPageName]= useState(router.pathname)
       <div
         key={router.asPath}
         className={`${body.variable} ${custom.variable}`}
-      >       
+      >
+        <PageTransition/>       
         <Component {...pageProps} />     
         {/* <Footer /> */}
       </div>

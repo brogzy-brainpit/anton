@@ -2,6 +2,8 @@ import Landing from "@/component/Landing";
 import Scene from "../../home/Scene";
 import { useEffect, useState } from "react";
 import Land from "@/component/Land";
+import LocalTime from "@/component/LocalTime";
+import Link from "next/link";
 
 
 export default function Home() {
@@ -20,7 +22,9 @@ export default function Home() {
     <main
       className={`h-full w-full`}
     >
+      {/* <LocalTime/> */}
     <Land preloaderOut={preLoaderOut}/>
+    <Link href="/contact" className="absolute top-0 left-0 w-full h-full z-50 text-white">contact page</Link>
     <Landing preloaderOut={preLoaderOut}/>
     </main>
   );
