@@ -47,10 +47,10 @@ function Land({preloaderOut}) {
   </motion.div> 
 
   <div className="relative  w-full h-full flex items-center justify-center">
-      <Section className="w-full h-full">
+      <Section className="w-full h-full bg-pik-800">
       
-    <GridColumn  className="w-full h-full bgorange-700">
-      <div className="col-span-full lg:col-span-7 bg-red900 self-end justify-end">
+    <GridColumn  className="w-full h-full place-items-end">
+      <div className=" order-2 lg:order-1 col-span-full lg:col-span-7 bg-red900 self-end justify-end">
           <h2 className='text-brand-secondary text-heading1 leading-[.6] font-custom'>
         <TypographyReveal startDelay={.25} preloaderOut={preloaderOut} className='font-custom leading-[1.1]'
             toColor='#c5fe0c'
@@ -63,7 +63,8 @@ function Land({preloaderOut}) {
                         </h2>
             
       </div>
-      <div className="col-start-1 bg-green500 self-end justify-en col-span-full lg:col-start-10 lg:col-span-3 ">
+
+      <div className="order-1 lg:order-2 col-start-3 bg-green500 self-end justify-en col-span-4 lg:col-start-10 lg:col-span-3 ">
 <div className="w-full items-en   flex  flex-col gap-6 bg-white p-4  rounded-2xl">
 
 {/* video contaniner */}
