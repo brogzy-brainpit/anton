@@ -20,7 +20,7 @@ export default function AnimatedArrow({
     >
       <motion.path
         d={pathData}
-        fill="#0100BE"
+        fill="#C5FE0C"
         fillRule="evenodd"
         stroke="none"
         initial={{ pathLength: 0, opacity: 0 }}

@@ -52,7 +52,7 @@ function Land({preloaderOut}) {
     <GridColumn  className="w-full h-full bgorange-700">
       <div className="col-span-full lg:col-span-7 bg-red900 self-end justify-end">
           <h2 className='text-brand-secondary text-heading1 leading-[.6] font-custom'>
-        <TypographyReveal startDelay={.25} preloaderOut={preloaderOut} className='font-custom capitalize leading-[1.1]'
+        <TypographyReveal startDelay={.25} preloaderOut={preloaderOut} className='font-custom leading-[1.1]'
             toColor='#c5fe0c'
             toColor2='#fbfbfb'
               animationType='fadeInUp'
