@@ -34,7 +34,7 @@ module.exports = {
         '3xl': 'clamp(2rem, 2.4vw + 0.6rem, 2.5rem)',
         'button': 'clamp(14px, 3.5vw, 18px)',
         'para': 'clamp(1.2em, 1vw + 0.2em, 1.3em)',
-        'heading1': 'clamp(3em, 7vw + 0.5em, 8.5em)',
+        'heading1': 'clamp(4.5em, 8vw + 0.5em, 10em)',
         'heading2': 'clamp(2.4em, 4.5vw + 0.5em, 4.5em)',
         'heading3': 'clamp(1em, 2vw + 0.2em, 2.8em)',
         'display': 'clamp(3em, 5vw + 1vw, 6em)',
