@@ -33,6 +33,7 @@ const scale = useTransform(
                 return (
             // <motion.div style={{scale:i*.08,zIndex:a}} className="img w-full mask [-webkit-mask-image:url('/assets/mask.png')] [mask-image:url('/assets/mask.png')] [mask-size:cover] [-webkit-mask-size:cover] [-webkit-mask-position:center] [mask-position:center] absolute top-0 left-0 h-full will-change-transform ">
             <motion.div 
+            key={i}
                 style={{scale,zIndex:a}}
               className=" w-full ask r] absolute top-0 left-0 h-full will-change-transform ">
                 <Image 
