@@ -8,7 +8,7 @@ import Lenis from 'lenis';
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 
-export default function Test() {
+export default function TextMarqueOnScroll() {
 
   const container = useRef();
   const { scrollYProgress } = useScroll({
@@ -54,11 +54,19 @@ const Phrase = ({src}) => {
 
   return (
     <div className={'px-5 flex gap-5 items-center'}>
-      <p className='text-heading1 text-brand-white font-custom lowercase'>• YOUR CAR • </p>
+      <p className='text-heading1 text-brand-white font-custom2'>
+        <span className='text-brand-secondary'>•</span>
+         YOUR CAR 
+        <span className='text-brand-secondary'>•</span>
+         </p>
       <span className="relative h-[7.5vw] aspect-[4/2] rounded-full overflow-hidden">
         <Image style={{objectFit: "cover"}} src={src} alt="image" fill/>
       </span>
-      <p className='text-heading1 text-brand-white font-custom lowercase'>• OUR CARE</p>
+      <p className='text-heading1 text-brand-white font-custom2 '>
+      <span className='text-brand-secondary'>• </span>
+         OUR CARE
+        
+         </p>
     </div>
   )
 }

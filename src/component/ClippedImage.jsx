@@ -1,8 +1,8 @@
 import React, { useRef } from 'react'
 import { motion, useInView } from 'framer-motion';
-function ClippedImage({ preloaderOut ,children, delay=0, duration=1 }) {
+function ClippedImage({ preloaderOut ,children, delay=0, duration=1,once=true }) {
     const contView=useRef();
-    const inView=useInView(contView,{once:false});
+    const inView=useInView(contView,{once});
   return (
     <motion.div ref={contView}
   className="flex-1 overflow-hidden w-full h-ful"

@@ -3,7 +3,7 @@ import Land from "@/component/Land";
 import LocalTime from "@/component/LocalTime";
 import Section1 from "@/component/Section1";
 import Cta from "@/component/Cta";
-import Test from "@/component/Test";
+import Test from "@/component/TextMarqueOnScroll";
 import Foot from "@/component/Foot";
 import Services from "@/component/Services";
 
