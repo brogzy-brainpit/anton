@@ -65,7 +65,7 @@ function Land({preloaderOut}) {
       <Section className="w-full h-full">
       
     <GridColumn   className="w-full h-full">
-<div className=" col-start-1 col-span-ull lg:col-start-7 lg:col-span-6 items-en self-end justify-end  flex  bg-white p-4  rounded-2xl">
+<div className=" col-start-1 col-span-full lg:col-start-7 lg:col-span-6 items-en self-end justify-end  flex  bg-white p-4  rounded-2xl">
 <div className="flex-1 h-full flex gap-10 flex-col justify-between">
   <h2 className=" font-body text-para  text-brand-black leading-[1]">
   <SlideUpText
