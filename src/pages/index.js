@@ -1,9 +1,8 @@
-import Landing from "@/component/Landing";
-import Scene from "../../home/Scene";
 import { useEffect, useState } from "react";
 import Land from "@/component/Land";
 import LocalTime from "@/component/LocalTime";
-import Link from "next/link";
+import Section1 from "@/component/Section1";
+import Mask from "@/component/Mask";
 
 
 export default function Home() {
@@ -24,8 +23,8 @@ export default function Home() {
     >
       {/* <LocalTime/> */}
     <Land preloaderOut={preLoaderOut}/>
-    <Landing preloaderOut={preLoaderOut}/>
-    <Link href="/contact" className="h-screen flex items-center justify-center text-black bg-white text-heading1">contact page</Link>
+<Section1/>
+<Mask/>
     </main>
   );
 }

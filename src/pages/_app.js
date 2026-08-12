@@ -14,6 +14,7 @@ import Script from "next/script";
 // import Header from '@/components/Header';
 import Head from 'next/head';
 import PageTransition from '@/component/PageTransition';
+import Footer from '@/component/Footer';
 
 const body = DM_Sans({
   subsets: ["latin"],
@@ -178,7 +179,7 @@ const [pageName,setPageName]= useState(router.pathname)
       >
         <PageTransition/>       
         <Component {...pageProps} />     
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </AnimatePresence>
     </Lenis>

@@ -60,10 +60,10 @@ module.exports = {
         'para': 'clamp(20px, 1vw, 24px)',
       },
       colors:{
-        'brand-white':"#1c2218",
+        'brand-white':"#ffffff",
         'brand-black':"#262626",
         'brand-accent':"#614d70", //accent for links, hover state 
-        'brand-secondary':"#171717", //blue best
+        'brand-secondary':"#FCCE2F", //blue best
         'brand-background-dark':"#1c2218",
         'brand-background':"#D23723",
         'brand-backgroundz':"#CFCFCF",
