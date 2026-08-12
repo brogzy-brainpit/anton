@@ -7,6 +7,7 @@ import SlideUpText from '@/effects/SlideUpText'
 import GridColumn from '@/layout/GridColumn'
 import Section from '@/layout/Section'
 import CustomBtn from './CustomBtn'
+import TypographyReveal from './TextReveals'
 
 function Land({preloaderOut}) {
   const landingRef=useRef(null)
@@ -24,12 +25,6 @@ function Land({preloaderOut}) {
       
         <img src="/assets/car-background.png" alt="Land" className="absolute top-0 left-0 w-full h-full object-cover"/>
         <img src="/assets/car-background-mobile.png" alt="Land" className="aspect-[5/7] inline lg:hidden absolute top-0 left-0 w-full h-full object-cover"/>
-  <MarqueeX numbers={6} speed={180}  className='absolute hidden lg:flex  top-0 left-0  w-full h-full  border-none bg-gree-600' >
-  <h2 className=" w-full h-full fl gap-4  font-custom text-[#C5FE0C] mr-[12em] font-bod">
-    <BrandName/> 
-     </h2>
-  </MarqueeX>
-
   <motion.div   style={{x:newX,y:newY}} className=" lg:inline hidden absolute top-0 left-0 w-full h-full">
         <motion.img
         animate={{x:preloaderOut?0:300,y:preloaderOut?0:-20,scale:preloaderOut?1:.95}}
@@ -49,26 +44,30 @@ function Land({preloaderOut}) {
           // animate={{x:preloaderOut?newX:300,y:preloaderOut?0:-20,scale:preloaderOut?1:.95}}
            src="/assets/car-alone-mobile.png" alt="Land" className="absolute top-0 left-0 w-full h-full object-cover"/>
 
-  </motion.div>
+  </motion.div> 
 
-        
- <div
-
-  className="flex lg:hidden absolute top-0 left-0 items-end w-full h-full"
-> <h2 className=" font-custom text-[#FCCE2F] text-[15em] leading-[.9] font-bod">
-   {/* ANTOS CAR CARE */}
-   <SlideUpText text={"ANTOS CAR CARE"} preLoaderOut={preloaderOut}/>
-     </h2>
-  </div>
-
-  <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+  <div className="relative  w-full h-full flex items-center justify-center">
       <Section className="w-full h-full">
       
-    <GridColumn   className="w-full h-full">
-<div className=" col-start-1 col-span-full lg:col-start-7 lg:col-span-6 items-en self-end justify-end  flex  bg-white p-4  rounded-2xl">
+    <GridColumn  className="w-full h-full bgorange-700">
+      <div className="col-span-full lg:col-span-7 bg-red900 self-start justify-end">
+          <h2 className='text-brand-secondary text-heading1 leading-[.6] font-custom'>
+        <TypographyReveal startDelay={.25} preloaderOut={preloaderOut} className='font-custom capitalize leading-[1.1]'
+            toColor='#c5fe0c'
+            toColor2='#fbfbfb'
+              animationType='fadeInUp'
+               fromDirection='left'
+                revealType='word'  >
+                       Game-changing Car Care 
+              </TypographyReveal>
+              <span className='inline'>dd</span>
+                        </h2>
+      </div>
+      <div className="col-start-1 bg-green500 self-end justify-en col-span-full lg:col-start-7 lg:col-span-6 ">
+<div className="w-full items-en   flex  bg-white p-4  rounded-2xl">
 <div className="flex-1 h-full flex gap-10 flex-col justify-between">
   <h2 className=" font-body text-para  text-brand-black leading-[1]">
-  <SlideUpText
+  <SlideUpText gap='.3em'
    text={"Doorstep car cleaning made easy. Eco-friendly, professional, and convenient—book your wash today!"}
    preLoaderOut={preloaderOut}/>
   </h2>
@@ -104,6 +103,9 @@ function Land({preloaderOut}) {
   />
 </motion.div>
 </div>
+
+      </div>
+
     </GridColumn>
       </Section>
 

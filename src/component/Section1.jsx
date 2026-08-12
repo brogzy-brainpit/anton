@@ -15,7 +15,7 @@ function Section1() {
           <GridColumn className={"h-full"}>
             <div className="col-span-3 lg:col-span-3 bg-red400">
               <h2 className='text-brand-accent text-heading2 leading-[.6] font-custom'>
-                  <TypographyReveal className='font-custom uppercase leading-[1.1]'
+                  <TypographyReveal preloaderOut className='font-custom uppercase leading-[1.1]'
     toColor='#0100be'
       animationType='fadeInUp'
        fromDirection='left'
@@ -30,7 +30,7 @@ function Section1() {
             </div>
             <div className="lg:col-start-6 lg:col-span-7 col-span-full">
             <h1 className='capitalie'>
-   <TypographyReveal className='font-custom text-brand-accent text-heading2 capitalie leading-[1.1]'
+   <TypographyReveal preloaderOut className='font-custom text-brand-accent text-heading2 capitalie leading-[1.1]'
     toColor='#0100be'
       animationType='fadeInUp'
        fromDirection='left'

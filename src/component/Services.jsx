@@ -39,7 +39,7 @@ function Services() {
         <GridColumn>
             <div className="col-span-3 lg:col-span-3 bg-red400">
                         <h2 className='text-brand-accent text-heading2 leading-[.6] font-custom'>
-                            <TypographyReveal className='font-custom uppercase leading-[1.1]'
+                            <TypographyReveal preloaderOut className='font-custom uppercase leading-[1.1]'
               toColor='#0100be'
                 animationType='fadeInUp'
                  fromDirection='left'
@@ -50,7 +50,7 @@ function Services() {
                       </div>
           <div className="col-span-full lg:col-span-8 lg:col-start-5 mb-10">
              <h1 className='capitalie'>
-               <TypographyReveal className='font-custom text-brand-accent text-heading2 capitalie leading-[1.1]'
+               <TypographyReveal preloaderOut className='font-custom text-brand-accent text-heading2 capitalie leading-[1.1]'
                 toColor='#0100be'
                   animationType='fadeInUp'
                    fromDirection='left'
@@ -76,6 +76,7 @@ so your car looks its best and stays that way.
                   lg:col-span-4
                   min-h-[280px]
                   p-6
+                  mb-6
                   md:p-8
                   flex
                   flex-col
