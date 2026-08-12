@@ -19,37 +19,16 @@ const arr= [6,5,4,3,2,1]
                  priority 
                  fill className='w-full object-cover h-screen object-[50%_14%]'
                    src='/assets/owner.png' /></div>
-            {arr.map((a,i)=>{
-    const startScale = i / (arr.length - .9);
-
-const scale = useTransform(
-  scrollYProgress,
-  [0.15, 0.8],
-  [startScale, 1]
-);           
-                return (
-            // <motion.div style={{scale:i*.08,zIndex:a}} className="img w-full mask [-webkit-mask-image:url('/assets/mask.png')] [mask-image:url('/assets/mask.png')] [mask-size:cover] [-webkit-mask-size:cover] [-webkit-mask-position:center] [mask-position:center] absolute top-0 left-0 h-full will-change-transform ">
-            <motion.div 
-            key={i}
-                style={{scale,zIndex:a}}
-              className=" w-full ask r] absolute top-0 left-0 h-full will-change-transform ">
-                <Image 
-                 src='/assets/mask.png' 
-                 fill
-                quality={95}
-                // decoding="async"
-                // sizes="
-                //   (max-width:768px) 100vw,
-                //   (max-width:1024px) 50vw,
-                //   25vw
-                // "
-                className=' w-full object-cover h-screen object-[50%_14%]' 
-                />
-
-                </motion.div>
-                   
-                )
-            })}
+             {/* Mask layers */}
+          {arr.map((a, i) => (
+            <MaskLayer
+              key={i}
+              index={i}
+              zIndex={a}
+              total={arr.length}
+              scrollYProgress={scrollYProgress}
+            />
+          ))}
     </motion.div>
      {/* <div className='flex items-center justify-center gap-4 absolute top-[80%] left-1/2 -translate-x-1/2 -translate-y-1/2'>
            {'lorem ipsum dolor'.split(" ").map((word,i)=>{
@@ -66,5 +45,32 @@ const scale = useTransform(
        
   )
 }
+function MaskLayer({ index, zIndex, scrollYProgress, total }) {
+  const startScale = index / (total - 0.9);
 
+  const scale = useTransform(
+    scrollYProgress,
+    [0.15, 0.8],
+    [startScale, 1]
+  );
+
+  return (
+    <motion.div
+      style={{
+        scale,
+        zIndex,
+      }}
+      className="absolute top-0 left-0 w-full h-full will-change-transform"
+    >
+      <Image
+        src="/assets/mask.png"
+        fill
+        quality={95}
+        alt=""
+        sizes="100vw"
+        className="w-full h-screen object-cover object-[50%_14%]"
+      />
+    </motion.div>
+  );
+}
 export default Mask
