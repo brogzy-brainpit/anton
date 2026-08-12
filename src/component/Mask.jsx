@@ -26,10 +26,7 @@ const scale = useTransform(
   scrollYProgress,
   [0.15, 0.8],
   [startScale, 1]
-);
-        //    const scale=useSpring(useTransform(scrollYProgress,[0,.8],[i*.13,1]),{stiffness:100,damping:10,mass:.2})
-
-           
+);           
                 return (
             // <motion.div style={{scale:i*.08,zIndex:a}} className="img w-full mask [-webkit-mask-image:url('/assets/mask.png')] [mask-image:url('/assets/mask.png')] [mask-size:cover] [-webkit-mask-size:cover] [-webkit-mask-position:center] [mask-position:center] absolute top-0 left-0 h-full will-change-transform ">
             <motion.div 
