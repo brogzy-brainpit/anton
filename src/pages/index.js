@@ -5,6 +5,7 @@ import Section1 from "@/component/Section1";
 import Cta from "@/component/Cta";
 import Test from "@/component/Test";
 import Foot from "@/component/Foot";
+import Services from "@/component/Services";
 
 
 export default function Home() {
@@ -27,6 +28,7 @@ export default function Home() {
     <Land preloaderOut={preLoaderOut}/>
 <Section1/>
 <Test/>
+<Services/>
 <Cta/>
 <Foot/>
     </main>

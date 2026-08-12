@@ -4,16 +4,18 @@ import React from 'react'
 import TypographyReveal from './TextReveals'
 import AnimatedArrow from './AnimatedArrow'
 import Image from 'next/image'
+import ClippedImage from './ClippedImage'
+import BeforeAfterSlider from './BeforeAfterSlider'
 
 function Section1() {
   return (
     <div className='min-h-[85svh]'>
         
         <Section>
-          <GridColumn gridLines className={"h-full"}>
+          <GridColumn className={"h-full"}>
             <div className="col-span-3 lg:col-span-3 bg-red400">
-              <h2 className='text-brand-accent text-heading2 leading-[.8] font-custom'>
-                  <TypographyReveal className='font-custom capitalie leading-[1.1]'
+              <h2 className='text-brand-accent text-heading2 leading-[.6] font-custom'>
+                  <TypographyReveal className='font-custom uppercase leading-[1.1]'
     toColor='#0100be'
       animationType='fadeInUp'
        fromDirection='left'
@@ -39,23 +41,29 @@ Expert Car Detaiing: from luxury brands to your everyday ride in Miami
 
             </div>
          <div className="col-span-full lg:col-start-1 lg:col-span-5 mt-10">
-  <Image
+          <ClippedImage duration={.6}>
+  {/* <Image
     src="/assets/red-benz.png"
     alt="hero"
     width={1000}
     height={1000}
     className="w-full h-auto object-cover rounded-2xl"
-  />
+  /> */}
+  <BeforeAfterSlider beforeImage={'/assets/seat02Clean.png'} afterImage={'/assets/seat02Dirt.png'}/>
+          </ClippedImage>
 </div>
 
 <div className="col-span-full lg:col-start-10 lg:col-span-3  place-items-end grid">
+  <ClippedImage delay={.4} duration={.6}>
   <Image
-    src="/assets/red-benz.png"
+    src="/assets/yellow-car.png"
     alt="hero"
     width={1000}
     height={1000}
     className="w-full h-auto object-cover rounded-2xl"
   />
+
+  </ClippedImage>
 </div>
           </GridColumn>
         </Section>

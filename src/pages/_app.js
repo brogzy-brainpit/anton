@@ -23,18 +23,18 @@ const body = DM_Sans({
   display: "swap",
 });
 const custom = localFont({
-  src:  "./fonts/perfectlynineties-regularitalic.otf",
+  src:  "./fonts/perfectlynineties.otf",
   // src:  "./fonts/MonumentExtended-Ultrabold.otf",
 
   // weight: "100 200 300 400 500 600 700 800 900",
   variable: "--font-custom",
  
 });
-const custoom = Anton({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-custom",
-  display: "swap",
+
+const custom2 = localFont({
+  src:  "./fonts/perfectlynineties-regularitalic.otf",
+  variable: "--font-custom2",
+ 
 });
 
 
@@ -175,7 +175,7 @@ const [pageName,setPageName]= useState(router.pathname)
 
       <div
         key={router.asPath}
-        className={`${body.variable} ${custom.variable}`}
+        className={`${body.variable} ${custom.variable} ${custom2.variable}`}
       >
         <PageTransition/>       
         <Component {...pageProps} />     
