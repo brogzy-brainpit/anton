@@ -28,7 +28,7 @@ export default function TextMarqueOnScroll() {
   }, [])
 
   return (
-    <section className="overflow-hidden  pt-20 pb-5 lg:pt-20 lg:pb-10 bg-brand-accent">
+    <section className="overflow-hidden  pt-20 pb-10 lg:py-20 bg-brand-accent">
       <div ref={container}>
         <Slide src={Picture1} direction={'left'} left={"-40%"} progress={scrollYProgress}/>
         <Slide src={Picture2} direction={'right'} left={"-25%"} progress={scrollYProgress}/>
