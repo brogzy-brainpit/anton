@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Land from "@/component/Land";
 import LocalTime from "@/component/LocalTime";
 import Section1 from "@/component/Section1";
-import Mask from "@/component/Mask";
 import Cta from "@/component/Cta";
 import Test from "@/component/Test";
 import Foot from "@/component/Foot";
@@ -28,7 +27,6 @@ export default function Home() {
     <Land preloaderOut={preLoaderOut}/>
 <Section1/>
 <Test/>
-<Mask/>
 <Cta/>
 <Foot/>
     </main>

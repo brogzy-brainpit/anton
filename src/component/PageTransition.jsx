@@ -1,18 +1,22 @@
+"use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 
 function PageTransition() {
   const arr = [
-    "#262626",
-    "#FCCE2F",
-    "#262626",
-    "#FCCE2F",
-    "#262626",
-    "#FCCE2F",
-    "#262626",
-    "#FCCE2F",
-    "#262626",
-    "#FCCE2F",
+    "#0100be",
+    "#c5fe0c",
+    "#0100be",
+    "#c5fe0c",
+    "#0100be",
+    "#c5fe0c",
+    "#0100be",
+    "#c5fe0c",
+    "#0100be",
+    "#c5fe0c",
+    "#0100be",
+    "#c5fe0c",
   ];
 
   const variants = {
@@ -23,7 +27,7 @@ function PageTransition() {
     animate: (index) => ({
       scale: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.9,
         delay: index * 0.1,
         ease: [0.76, 0, 0.24, 1],
       },
@@ -32,7 +36,7 @@ function PageTransition() {
     exit: (index) => ({
       scale: 1.5,
       transition: {
-        duration: 0.8,
+        duration: 0.9,
         delay: (arr.length - 1 - index) * 0.1,
         ease: [0.76, 0, 0.24, 1],
       },
@@ -40,7 +44,17 @@ function PageTransition() {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full z-preloader overflow-hidden pointer-events-none">
+    <div
+      className="
+        fixed
+        inset-0
+        w-screen
+        h-screen
+        z-preloader
+        overflow-hidden
+        pointer-events-none
+      "
+    >
       {arr.map((color, index) => (
         <motion.div
           key={index}
@@ -49,11 +63,19 @@ function PageTransition() {
           initial="initial"
           animate="animate"
           exit="exit"
-          className="absolute top-0 left-0 w-full h-full rounded-full"
+          className="
+            absolute
+            left-1/2
+            top-1/2
+            w-[150vmax]
+            aspect-square
+            rounded-full
+          "
           style={{
-            scale:1.4,
             backgroundColor: color,
             zIndex: arr.length - index,
+            marginLeft: "-75vmax",
+            marginTop: "-75vmax",
           }}
         />
       ))}
