@@ -99,7 +99,7 @@ so your car looks its best and stays that way.
               >
                 {/* Top */}
                 <div className="flex items-start justify-between">
-                  <span className="font-custom2 text-heading1 absolute top-0 left-0 opacity-60">
+                  <span className="font-custom2 text-heading1 leading-[.85] absolute -top-[10%] left-0 ">
                     {service.number}
                   </span>
 
