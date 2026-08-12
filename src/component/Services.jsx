@@ -71,6 +71,7 @@ so your car looks its best and stays that way.
                 onMouseEnter={() => setActiveService(index)}
                 onMouseLeave={() => setActiveService(null)}
                 className={`
+                  relative
                   col-span-full
                   lg:col-span-4
                   min-h-[280px]
@@ -98,11 +99,11 @@ so your car looks its best and stays that way.
               >
                 {/* Top */}
                 <div className="flex items-start justify-between">
-                  <span className="font-body text-sm opacity-60">
+                  <span className="font-custom2 text-heading1 absolute top-0 left-0 opacity-60">
                     {service.number}
                   </span>
 
-                  <span className="text-sm font-body uppercase tracking-widest opacity-60">
+                  <span className="text-sm font-body absolute top-[8%] right-[8%]  uppercase tracking-widest opacity-60">
                     Service
                   </span>
                 </div>
