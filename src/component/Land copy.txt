@@ -50,7 +50,7 @@ function Land({preloaderOut}) {
       <Section className="w-full h-full">
       
     <GridColumn  className="w-full h-full bgorange-700">
-      <div className="col-span-full lg:col-span-7 bg-red900 self-end justify-end">
+      <div className="col-span-full lg:col-span-7 bg-red900 self-start justify-end">
           <h2 className='text-brand-secondary text-heading1 leading-[.6] font-custom'>
         <TypographyReveal startDelay={.25} preloaderOut={preloaderOut} className='font-custom capitalize leading-[1.1]'
             toColor='#c5fe0c'
@@ -61,14 +61,30 @@ function Land({preloaderOut}) {
                        Game-changing Car Care 
               </TypographyReveal>
                         </h2>
-            
+              {/* <span className='inline p-10 size-10 border-brand-white border rounded-full'>
+                <img className='w-[20px]' src='/assets/play.png'/>
+              </span> */}
       </div>
-      <div className="col-start-1 bg-green500 self-end justify-en col-span-full lg:col-start-10 lg:col-span-3 ">
-<div className="w-full items-en   flex  flex-col gap-6 bg-white p-4  rounded-2xl">
-
+      <div className="col-start-1 bg-green500 self-end justify-en col-span-full lg:col-start-7 lg:col-span-6 ">
+<div className="w-full items-en   flex  bg-white p-4  rounded-2xl">
+<div className="flex-1 h-full flex gap-10 flex-col justify-between">
+  <h2 className=" font-body text-para  text-brand-black leading-[1]">
+  <SlideUpText gap='.3em'
+   text={"Doorstep car cleaning made easy. Eco-friendly, professional, and convenient—book your wash today!"}
+   preLoaderOut={preloaderOut}/>
+  </h2>
+  <CustomBtn className="w-fit"
+  initialBg="#0100BE"
+  initialText="#FFFFFF"
+  hoverBg="#C5FE0C"
+  hoverText="#1d1d1d"
+>
+  Book A Call
+</CustomBtn>
+</div>
 {/* video contaniner */}
 <motion.div
-  className="flex-1 overflow-hidden relative"
+  className="flex-1 overflow-hidden"
   initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
   animate={{
     clipPath: preloaderOut
@@ -85,24 +101,9 @@ function Land({preloaderOut}) {
     autoPlay
     muted
     loop
-    className=" aspect-[7/4] object-cover rounded-2xl"
+    className="aspect-[7/4] w-full h-full object-cover rounded-2xl"
   />
-    <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'>
-                <div className='flex items-center justify-center p-4 size-[50px] border-brand-white border rounded-full'>
-                <img className='size-[20px]' src='/assets/play.png'/>
-                </div>
-              </div>
 </motion.div>
-{/* <div className="flex-1 h-full flex gap-10 flex-col justify-between">
-  <CustomBtn className="w-fit"
-  initialBg="#0100BE"
-  initialText="#FFFFFF"
-  hoverBg="#C5FE0C"
-  hoverText="#1d1d1d"
->
-  Book A Call
-</CustomBtn>
-</div> */}
 </div>
 
       </div>
