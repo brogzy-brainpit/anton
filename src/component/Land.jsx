@@ -25,7 +25,7 @@ function Land({preloaderOut}) {
         <img src="/assets/car-background.png" alt="Land" className="absolute top-0 left-0 w-full h-full object-cover"/>
         <img src="/assets/car-background-mobile.png" alt="Land" className="aspect-[5/7] inline lg:hidden absolute top-0 left-0 w-full h-full object-cover"/>
   <MarqueeX numbers={6} speed={180}  className='absolute hidden lg:flex  top-0 left-0  w-full h-full  border-none bg-gree-600' >
-  <h2 className=" w-full h-full fl gap-4  font-custom text-[#FCCE2F] mr-[12em] font-bod">
+  <h2 className=" w-full h-full fl gap-4  font-custom text-[#C5FE0C] mr-[12em] font-bod">
     <BrandName/> 
      </h2>
   </MarqueeX>
@@ -69,12 +69,17 @@ function Land({preloaderOut}) {
 <div className="flex-1 h-full flex gap-10 flex-col justify-between">
   <h2 className=" font-body text-para  text-brand-black leading-[1]">
   <SlideUpText
-   text={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum autem ratione maxime aliquid velit laudantium quos dolores minus, quod atque."}
+   text={"Doorstep car cleaning made easy. Eco-friendly, professional, and convenient—book your wash today!"}
    preLoaderOut={preloaderOut}/>
   </h2>
-  <CustomBtn className='w-fit' href="/about" icon={true}>
-    learn more
-    </CustomBtn>
+  <CustomBtn className="w-fit"
+  initialBg="#0100BE"
+  initialText="#FFFFFF"
+  hoverBg="#C5FE0C"
+  hoverText="#1d1d1d"
+>
+  Book A Call
+</CustomBtn>
 </div>
 {/* video contaniner */}
 <motion.div

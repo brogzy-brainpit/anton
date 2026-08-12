@@ -13,12 +13,12 @@ const arr= [6,5,4,3,2,1]
 // const MotionImage=motion(Image)
   return (
     <div ref={scrollTracker}   className='relative h-[300vh]  fle justify-center items-center'>
-      <div className='sticky overflow-hidden top-0 w-full h-screen bg-black flex  items-center justify-center' >
+      <div className='sticky overflow-hidden top-0 w-full h-screen bg-brand-white flex  items-center justify-center' >
         <motion.div style={{scale}} className=' overflow-hidden banner-img-container relative w-full h-full will-change-transform'>
             <div className="img "><Image quality={50} 
                  priority 
                  fill className='w-full object-cover h-screen object-[50%_14%]'
-                   src='/assets/owner.png' /></div>
+                   src='/assets/car-background.png' /></div>
              {/* Mask layers */}
           {arr.map((a, i) => (
             <MaskLayer
@@ -46,7 +46,7 @@ const arr= [6,5,4,3,2,1]
   )
 }
 function MaskLayer({ index, zIndex, scrollYProgress, total }) {
-  const startScale = index / (total - 0.9);
+  const startScale = index / (total - .6);
 
   const scale = useTransform(
     scrollYProgress,
@@ -63,7 +63,7 @@ function MaskLayer({ index, zIndex, scrollYProgress, total }) {
       className="absolute top-0 left-0 w-full h-full will-change-transform"
     >
       <Image
-        src="/assets/mask.png"
+        src="/assets/car-alone.png"
         fill
         quality={95}
         alt=""

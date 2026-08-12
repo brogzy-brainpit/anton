@@ -68,10 +68,10 @@ const {dimension}=useWindow()
         <motion.path
           key={index}
           d={path.d}
-          fill="#fcce2f"
+          fill="#C5FE0C"
           custom={index}
           variants={pathVariants}
-          className={"lg:w-[20em] lg:w-[20em]"}
+          className={"lg:w-[20em]"}
           style={{
             transformOrigin: "center",
           }}

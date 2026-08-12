@@ -23,7 +23,7 @@ const body = DM_Sans({
   display: "swap",
 });
 const custom = localFont({
-  src:  "./fonts/burned.ttf",
+  src:  "./fonts/perfectlynineties-regularitalic.otf",
   // src:  "./fonts/MonumentExtended-Ultrabold.otf",
 
   // weight: "100 200 300 400 500 600 700 800 900",
@@ -179,7 +179,7 @@ const [pageName,setPageName]= useState(router.pathname)
       >
         <PageTransition/>       
         <Component {...pageProps} />     
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </AnimatePresence>
     </Lenis>
