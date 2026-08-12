@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function Content() {
@@ -20,8 +21,10 @@ const Section1 = () => {
 const Section2 = () => {
     return (
         <div className='flex justify-between items-end'>
-            <h1 className='text-[14vw] leading-[0.8] text-brand-white font-custom mt-10'>Detail by Anton</h1>
-            <p className='text-brand-white font-body text-para'>©copyright</p>
+            <h1 className='text-[14vw] leading-[0.8] text-brand-secondary font-custom mt-10'>Detail by Anton</h1>
+            <p className='text-brand-secondary font-custom2 capitalize text-para'>
+                <Link className='underline' target='_blank' href={"https://www.instagram/memet_lab"}>site by memet</Link>
+            </p>
         </div>
     )
 }
