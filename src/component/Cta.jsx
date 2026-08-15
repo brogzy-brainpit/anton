@@ -15,7 +15,7 @@ function Zoom() {
 scrollYProgress.on("change",(v)=>{
   console.log(v)
 })
-  const CTAOpacity = useTransform(scrollYProgress, [.6, .8,1], [0, 1,1]);
+  const CTAOpacity = useTransform(scrollYProgress, [.7, .75,1], [0, 1,1]);
 
   const scale1 = useTransform(scrollYProgress, [0, .62], [0, 4]);
   const scale2 = useTransform(scrollYProgress, [.085, .60], [0, 9]);
