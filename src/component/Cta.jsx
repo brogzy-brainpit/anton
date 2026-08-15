@@ -118,7 +118,7 @@ scrollYProgress.on("change",(v)=>{
       <div  className={`sticky top-0 h-svh overflow-hidden bg-brand-white`}>
         {pictures.map(({ src, top,left,scale}, index) => (
           <motion.div key={index} style={{ scale }} className={`h-full w-full absolute top-0 flex items-center justify-center z0 pointer-evnts-none`}>
-            <div style={{top,left}} className={"w-[20vw] h-[18vh] lg:w-[14vw] lg:h-[45vh] relative "}>
+            <div style={{top,left}} className={"w-[20vw] h-[16vh] lg:w-[14vw] lg:h-[45vh] relative "}>
                 <Image src={src} fill alt="image" className='object-cover'  />
             </div>
           </motion.div>
