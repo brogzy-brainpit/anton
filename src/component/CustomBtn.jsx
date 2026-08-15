@@ -29,6 +29,7 @@ function CustomBtn({
         flex
         items-center
         justify-center
+        cursor-pointer
       `}
     >
       {/* Initial button */}

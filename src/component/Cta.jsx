@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useScroll, useTransform, motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import CustomBtn from './CustomBtn';
+import Section from '@/layout/Section';
 // import { VolumeOff } from 'lucide-react';
 
 function Zoom() {
@@ -114,24 +115,25 @@ scrollYProgress.on("change",(v)=>{
 
   return (
     <div ref={container} className={"h-[500svh] relative "}>
-      <div  className={`sticky top-0 h-svh overflow-hidden bg-brand-accent`}>
+      <div  className={`sticky top-0 h-svh overflow-hidden bg-brand-white`}>
         {pictures.map(({ src, top,left,scale}, index) => (
-          <motion.div key={index} style={{ scale }} className={`h-full w-full absolute top-0 flex items-center justify-center z-20 pointer-evnts-none`}>
+          <motion.div key={index} style={{ scale }} className={`h-full w-full absolute top-0 flex items-center justify-center z0 pointer-evnts-none`}>
             <div style={{top,left}} className={"w-[20vw] h-[18vh] lg:w-[14vw] lg:h-[45vh] relative "}>
                 <Image src={src} fill alt="image" className='object-cover'  />
             </div>
           </motion.div>
         ))}
-        <motion.div style={{opacity:CTAOpacity}} className="absolute inset-0 w-full h-full flex items-center justify-center flex-col gap-2 z-10">
-          <h2 className='text-heading2 font-custom2 text-brand-white'>YOUR CAR, OUR CARE</h2>
-        <p className='text-brand-white text-center font-body text-para max-w-[50ch]'>Transform your car with expert cleaning,
+
+        <motion.div style={{opacity:CTAOpacity}} className="absolute px-5 inset-0 w-full h-full flex items-center justify-center flex-col gap- z10">
+          <h2 className='text-heading2 font-custom2 text-brand-accent'>YOUR CAR, OUR CARE</h2>
+        <p className='text-brand-accent text-center font-body text-para max-w-[50ch]'>Transform your car with expert cleaning,
  all from the comfort of your home. Trust our team for a spotless finish every time.</p>
-    <CustomBtn className="w-fit capitalize font-body"
+    <CustomBtn className="w-fit capitalize font-body mt-6"
   initialBg="#C5FE0C"
   initialText="#1d1d1d"
 
-  hoverText="#1d1d1d"
-  hoverBg="#fbfbfb"
+  hoverText="#fbfbfb"
+  hoverBg="#0100be"
 >
   Contact us
 </CustomBtn>
