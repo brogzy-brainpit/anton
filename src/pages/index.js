@@ -6,6 +6,7 @@ import Cta from "@/component/Cta";
 import Test from "@/component/TextMarqueOnScroll";
 import Foot from "@/component/Foot";
 import Services from "@/component/Services";
+import Land2 from "@/component/Land2";
 
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
       className={`h-full w-full`}
     >
       {/* <LocalTime/> */}
+    <Land2 preloaderOut={preLoaderOut}/>
     <Land preloaderOut={preLoaderOut}/>
 <Section1/>
 <Test/>

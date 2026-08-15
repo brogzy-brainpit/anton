@@ -1,119 +1,355 @@
-import React, { useRef } from 'react'
-import {motion, useScroll, useTransform} from 'framer-motion'
-import useMouse from '@/hooks/useMouse'
-import BrandName from './BrandName'
-import MarqueeX from './MarqueeX'
-import SlideUpText from '@/effects/SlideUpText'
-import GridColumn from '@/layout/GridColumn'
-import Section from '@/layout/Section'
-import CustomBtn from './CustomBtn'
-import TypographyReveal from './TextReveals'
+import React, { useRef, useState } from "react";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import useMouse from "@/hooks/useMouse";
+import GridColumn from "@/layout/GridColumn";
+import Section from "@/layout/Section";
+import CustomBtn from "./CustomBtn";
+import TypographyReveal from "./TextReveals";
 
-function Land({preloaderOut}) {
-  const landingRef=useRef(null)
-  const {scrollYProgress}=useScroll({target:landingRef,offset:["start start","end start"]})
-  scrollYProgress.on("change",(v)=>{
-    console.log(v)
-  })
-  const newX= useTransform(scrollYProgress,[0.35,1],[0,-80])
-  const newY= useTransform(scrollYProgress,[0.35,1],[0,40])
-    const {x,y}=useMouse({start:{x:-50,y:50},stiffness:120,damping:30,mass:0.1})
-   const xMovement=useTransform(x,v=>v*.010) 
-   const yMovement=useTransform(y,v=>v*.012) 
+function Land({ preloaderOut }) {
+  const landingRef = useRef(null);
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
+  const { scrollYProgress } = useScroll({
+    target: landingRef,
+    offset: ["start start", "end start"],
+  });
+
+  const newX = useTransform(
+    scrollYProgress,
+    [0.35, 1],
+    [0, -80]
+  );
+
+  const newY = useTransform(
+    scrollYProgress,
+    [0.35, 1],
+    [0, 40]
+  );
+
   return (
-    <div ref={landingRef} className='relative h-svh w-full overflow-hidden bg-[#262626]'>
-      
-        <img src="/assets/car-background.png" alt="Land" className="absolute top-0 left-0 w-full h-full object-cover"/>
-        <img src="/assets/car-background-mobile.png" alt="Land" className="aspect-[5/7] inline lg:hidden absolute top-0 left-0 w-full h-full object-cover"/>
-  <motion.div   style={{x:newX,y:newY}} className=" lg:inline hidden absolute top-0 left-0 w-full h-full">
+    <div
+      ref={landingRef}
+      className="relative h-svh w-full overflow-hidden bg-[#262626]"
+    >
+      {/* =========================================
+          BACKGROUND
+      ========================================== */}
+
+      <img
+        src="/assets/car-background.png"
+        alt="Land"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+
+      <img
+        src="/assets/car-background-mobile.png"
+        alt="Land"
+        className="
+          absolute
+          inset-0
+          h-full
+          w-full
+          object-cover
+          lg:hidden
+        "
+      />
+
+      {/* =========================================
+          CAR
+      ========================================== */}
+
+      <motion.div
+        style={{
+          x: newX,
+          y: newY,
+        }}
+        className="absolute inset-0 hidden lg:block"
+      >
         <motion.img
-        animate={{x:preloaderOut?0:300,y:preloaderOut?0:-20,scale:preloaderOut?1:.95}}
-        transition={{type:"tween",duration:1.8,ease:[0.22, 1, 0.36, 1]}}
-          initial={{x:300,y:-20,scale:.95}}
-          exit={{x:300,y:-20,scale:.95}}
-          // animate={{x:preloaderOut?newX:300,y:preloaderOut?0:-20,scale:preloaderOut?1:.95}}
-           src="/assets/car-alone.png" alt="Land" className="absolute top-0 left-0 w-full h-full object-cover"/>
+          src="/assets/car-alone.png"
+          alt="Land"
+          initial={{
+            x: 300,
+            y: -20,
+            scale: 0.95,
+          }}
+          animate={{
+            x: preloaderOut ? 0 : 300,
+            y: preloaderOut ? 0 : -20,
+            scale: preloaderOut ? 1 : 0.95,
+          }}
+          transition={{
+            type: "tween",
+            duration: 1.8,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="
+            absolute
+            inset-0
+            h-full
+            w-full
+            object-cover
+          "
+        />
+      </motion.div>
 
-  </motion.div>
-  <motion.div   style={{x:newX,y:newY}} className=" aspect-[5/7] inline lg:hidden absolute top-0 left-0 w-full h-full">
+      <motion.div
+        style={{
+          x: newX,
+          y: newY,
+        }}
+        className="absolute inset-0 lg:hidden"
+      >
         <motion.img
-        animate={{x:preloaderOut?0:300,y:preloaderOut?0:-20,scale:preloaderOut?1:.95}}
-        transition={{type:"tween",duration:1.8,ease:[0.22, 1, 0.36, 1]}}
-          initial={{x:300,y:-20,scale:.95}}
-          exit={{x:300,y:-20,scale:.95}}
-          // animate={{x:preloaderOut?newX:300,y:preloaderOut?0:-20,scale:preloaderOut?1:.95}}
-           src="/assets/car-alone-mobile.png" alt="Land" className="absolute top-0 left-0 w-full h-full object-cover"/>
+          src="/assets/car-alone-mobile.png"
+          alt="Land"
+          initial={{
+            x: 300,
+            y: -20,
+            scale: 0.95,
+          }}
+          animate={{
+            x: preloaderOut ? 0 : 300,
+            y: preloaderOut ? 0 : -20,
+            scale: preloaderOut ? 1 : 0.95,
+          }}
+          transition={{
+            type: "tween",
+            duration: 1.8,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="
+            absolute
+            inset-0
+            h-full
+            w-full
+            object-cover
+          "
+        />
+      </motion.div>
 
-  </motion.div> 
+      {/* =========================================
+          CONTENT
+      ========================================== */}
 
-  <div className="relative  w-full h-full flex items-center justify-center">
-      <Section className="w-full h-full bg-pik-800">
-      
-    <GridColumn  className="w-full h-full place-items-end">
-      <div className=" order-2 lg:order-1 col-span-full lg:col-span-7 bg-red900 self-end justify-end">
-          <h2 className='text-brand-secondary text-heading1 leading-[.6] font-custom'>
-        <TypographyReveal startDelay={.25} preloaderOut={preloaderOut} className='font-custom leading-[1.1]'
-            toColor='#c5fe0c'
-            toColor2='#fbfbfb'
-              animationType='fadeInUp'
-               fromDirection='left'
-                revealType='word'  >
-                       Game-changing Car Care 
-              </TypographyReveal>
-                        </h2>
-            
-      </div>
+      <div className="relative z-10 flex h-full w-full items-center justify-center">
 
-      <div className="order-1 lg:order-2 col-start-3 bg-green500 self-end justify-en col-span-4 lg:col-start-10 lg:col-span-3 ">
-<div className="w-full items-en   flex  flex-col gap-6 bg-white p-4  rounded-2xl">
+        <Section className="h-full w-full">
 
-{/* video contaniner */}
-<motion.div
-  className="flex-1 overflow-hidden relative"
-  initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
-  animate={{
-    clipPath: preloaderOut
-      ? "inset(0% 0% 0% 0%)"
-      : "inset(100% 0% 0% 0%)",
-  }}
-  transition={{
-    duration: 1.2,
-    ease: [0.76, 0, 0.24, 1],
-  }}
->
-  <video
-    src="/videos/hero.mp4"
-    autoPlay
-    muted
-    loop
-    className=" aspect-[7/4] object-cover rounded-2xl"
-  />
-    <div className='absolute top-0 left-0 flex items-center justify-center w-full h-full'>
-                <div className='flex items-center justify-center p-4 size-[50px] border-brand-white border rounded-full'>
-                <img className='size-[20px]' src='/assets/play.png'/>
+          <GridColumn className="h-full w-full place-items-end">
+
+            {/* =====================================
+                TEXT
+            ====================================== */}
+
+            <div
+              className="
+                order-2
+                col-span-full
+                self-end
+                lg:order-1
+                lg:col-span-7
+              "
+            >
+              <h2 className="
+                font-custom
+                text-heading1
+                leading-[0.6]
+                text-brand-secondary
+              ">
+                <TypographyReveal
+                  startDelay={0.25}
+                  preloaderOut={preloaderOut}
+                  className="font-custom leading-[1.1]"
+                  toColor="#c5fe0c"
+                  toColor2="#fbfbfb"
+                  animationType="fadeInUp"
+                  fromDirection="left"
+                  revealType="word"
+                >
+                  Game-changing Car Care
+                </TypographyReveal>
+              </h2>
+            </div>
+
+            {/* =====================================
+                VIDEO
+            ====================================== */}
+
+            <div
+              className="
+                order-1
+                col-span-full
+                w-full
+                self-end
+                lg:order-2
+                lg:col-start-10
+                lg:col-span-3
+              "
+            >
+              <motion.div
+                layoutId="hero-video"
+                onClick={() => setIsVideoOpen(true)}
+                className="
+                  relative
+                  w-full
+                  cursor-pointer
+                  overflow-hidden
+                  rounded-2xl
+                  bg-white
+                  p-4
+                "
+                transition={{
+                  layout: {
+                    duration: 0.8,
+                    ease: [0.76, 0, 0.24, 1],
+                  },
+                }}
+              >
+                <div className="relative aspect-[7/4] w-full overflow-hidden rounded-2xl">
+
+                  <video
+                    src="/videos/hero.mp4"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="
+                      h-full
+                      w-full
+                      object-cover
+                    "
+                  />
+
+                  {/* PLAY BUTTON */}
+
+                  <div className="
+                    absolute
+                    inset-0
+                    flex
+                    items-center
+                    justify-center
+                  ">
+                    <div className="
+                      flex
+                      size-[50px]
+                      items-center
+                      justify-center
+                      rounded-full
+                      border
+                      border-brand-white
+                      p-4
+                    ">
+                      <img
+                        src="/assets/play.png"
+                        alt=""
+                        className="size-[20px]"
+                      />
+                    </div>
+                  </div>
+
                 </div>
-              </div>
-</motion.div>
-{/* <div className="flex-1 h-full flex gap-10 flex-col justify-between">
-  <CustomBtn className="w-fit"
-  initialBg="#0100BE"
-  initialText="#FFFFFF"
-  hoverBg="#C5FE0C"
-  hoverText="#1d1d1d"
->
-  Book A Call
-</CustomBtn>
-</div> */}
-</div>
+              </motion.div>
+            </div>
 
+          </GridColumn>
+
+        </Section>
       </div>
 
-    </GridColumn>
-      </Section>
+      {/* =========================================
+          FULLSCREEN VIDEO
+      ========================================== */}
 
-  </div>
-        </div>
-  )
+      <AnimatePresence>
+        {isVideoOpen && (
+          <>
+            {/* BACKDROP */}
+
+            <motion.div
+              className="
+                fixed
+                inset-0
+                z-[90]
+                bg-black/80
+                backdrop-blur-sm
+              "
+              initial={{
+                opacity: 0,
+              }}
+              animate={{
+                opacity: 1,
+              }}
+              exit={{
+                opacity: 0,
+              }}
+              onClick={() => setIsVideoOpen(false)}
+            />
+
+            {/* VIDEO */}
+
+            <motion.div
+              layoutId="hero-video"
+              className="
+                fixed
+                inset-4
+                z-[100]
+                overflow-hidden
+                rounded-2xl
+                bg-black
+                md:inset-8
+              "
+              transition={{
+                layout: {
+                  duration: 0.8,
+                  ease: [0.76, 0, 0.24, 1],
+                },
+              }}
+            >
+
+              <video
+                src="/videos/hero.mp4"
+                autoPlay
+                controls
+                playsInline
+                className="
+                  h-full
+                  w-full
+                  object-contain
+                "
+              />
+
+              {/* CLOSE */}
+
+              <button
+                type="button"
+                onClick={() => setIsVideoOpen(false)}
+                className="
+                  absolute
+                  right-5
+                  top-5
+                  z-10
+                  flex
+                  size-10
+                  items-center
+                  justify-center
+                  rounded-full
+                  bg-black/60
+                  text-xl
+                  text-white
+                  backdrop-blur-md
+                "
+              >
+                ×
+              </button>
+
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </div>
+  );
 }
 
-export default Land
+export default Land;
